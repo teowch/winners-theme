@@ -1,0 +1,15 @@
+.banner-topo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+    height: 75vh;
+}
+
+.banner-topo-image {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}

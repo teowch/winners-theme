@@ -1,0 +1,48 @@
+header {
+    width: 100%;
+    background: var(--dark);
+    color: var(--orange-winners);
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: 50px;
+    margin: 10px;
+}
+
+nav {
+    flex: 1;
+    max-width: var(--max-content-width);
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    height: 100%;  
+}
+
+nav ul a, .logo{
+    text-decoration: none;
+    color: unset;
+    transition: all .2s;
+}
+nav ul a:hover {
+    background-color: #140b07;
+}
+
+nav ul li {
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
