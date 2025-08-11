@@ -19,13 +19,6 @@ function setBannerDarknessOnScroll() {
         topBannerImage.style.position = 'relative';
         topBannerImage.style.setProperty('--banner-darkness', clampedDarkness);
 
-        // Ensure banner is above navbar and not hidden
-        const header = document.querySelector('.header'); // Adjust selector as needed
-        if (header) {
-            const headerHeight = header.offsetHeight;
-            topBannerContainer.style.marginTop = `${headerHeight}px`;
-        }
-
         // Add overlay if not present
         if (!topBannerImage.querySelector('.banner-dark-overlay')) {
             const overlay = document.createElement('div');
@@ -40,7 +33,7 @@ function setBannerDarknessOnScroll() {
             topBannerImage.appendChild(overlay);
         }
         const overlay = topBannerImage.querySelector('.banner-dark-overlay');
-        overlay.style.background = `rgba(0,0,0,${clampedDarkness})`; // 0.7 is max darkness
+        overlay.style.background = `rgba(39, 32, 29,${clampedDarkness})`; // 0.7 is max darkness
     }
 
     window.addEventListener('scroll', updateDarkness);

@@ -1,7 +1,11 @@
 :root {
-    --light: #e8e2df;
+    --light: #e4d4cc;
     --dark: #27201d;
+    --dark-rgba: rgba(39, 32, 29, 0.8);
     --orange-winners: #f48346;
-    --white: #ffffff;
+    --orange-winners-rgba: rgba(244, 131, 70, 0);
+    --aguas-abertas: #46a6f4;
+    --master: #f4c746;
+    --federados: #f4465c;
     --max-content-width: 1366px;
 }

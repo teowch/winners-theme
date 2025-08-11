@@ -12,7 +12,13 @@
     </a>
     </div>
     <nav class="navbar">
-      <ul>
+      <!-- Hamburger Button -->
+      <div class="menu-icon" id="menu-icon">
+        <div class="bar bar-1"></div>
+        <div class="bar bar-2"></div>
+        <div class="bar bar-3"></div>
+      </div>
+      <ul id="menu">
         <a href="<?php echo home_url('/home'); ?>"><li>Início</li></a>
         <a href="<?php echo home_url('/quem-somos'); ?>"><li>Quem Somos</li></a>
         <a href="<?php echo home_url('/equipes'); ?>"><li>Equipes</li></a>

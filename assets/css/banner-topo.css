@@ -4,6 +4,7 @@
     justify-content: center;
     overflow-x: hidden;
     height: 75vh;
+    position: relative;
 }
 
 .banner-topo-image {
@@ -12,4 +13,43 @@
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+ /* Elemento sobreposto */
+.mask {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: var(--light);
+    z-index: 2;
+    /* triângulo com largura fixa de 40px posicionado à esquerda */
+    clip-path: polygon(
+      calc(10rem) 0,
+      calc(10rem + 30px) 100%,
+      calc(10rem + 60px) 0,
+      100% 0,
+      100% 100%,
+      0 100%,
+      0 0
+    );
+}
+
+@media (max-width: 768px) {
+    .mask {
+        clip-path: polygon(
+            calc(2rem) 0,
+            calc(2rem + 30px) 100%,
+            calc(2rem + 60px) 0,
+            100% 0,
+            100% 100%,
+            0 100%,
+            0 0
+        );
+    }
+    
 }

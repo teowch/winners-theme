@@ -13,15 +13,20 @@ body {
     max-width: 1920px;
     margin: auto;
     position: relative;
+    color: var(--dark);
 }
 
 p {
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 main {
-    padding: 2rem;
+    /* padding: 2rem; */
     text-align: justify;
+}
+
+.conteudo {
+    padding: 1rem 10rem;
 }
 
 .page-title {
@@ -29,4 +34,10 @@ main {
     font-size: 2rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .conteudo {
+        padding: 1rem 2rem;
+    }
 }

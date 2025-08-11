@@ -1,5 +1,5 @@
 .slider-comissao-title {
-  text-align: center;
+  
 }
 
 .slider-container {
@@ -7,7 +7,9 @@
   align-items: center;
   overflow: hidden;
   position: relative;
-  margin: auto;
+  /* margin: auto; */
+  margin-top: 1rem;
+  max-width: 100%;
 }
 
 .slider {
@@ -17,12 +19,13 @@
 .slide-track {
   display: flex;
   will-change: transform;
-  transform: translateX(300px)
 }
 
 .slide {
   min-width: 300px;
+  flex-shrink: 0;
   object-fit: cover;
+  box-sizing: border-box;
 }
 
 .slider::-webkit-scrollbar {
@@ -56,6 +59,7 @@
 
 @media (max-width: 600px) {
   .slide {
-    width: 80%;
+    /* A largura será controlada pelo JavaScript */
+    min-width: 250px; /* Largura mínima para telas pequenas */
   }
 }
