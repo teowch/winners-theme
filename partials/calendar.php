@@ -125,7 +125,6 @@
     ?>
       <article class="winners-evento <?php echo $cat_slug;?>">
         <h3 class="winners-evento__titulo"><?php echo get_the_title( $evento ); ?></h3>
-        <div class="winners-evento__info">
             <div class="winners-evento__data">
                 🗓 <?php
                 $start = esc_html( tribe_get_start_date( $evento, true, $a['data'] ) );
@@ -147,7 +146,7 @@
 
             echo '<div class="winners-evento__categoria">🏊‍♂️ Equipe <div class="categoria categoria-'.$cat_slug.'">' . implode(', ', $cat_names) . '</div></div>';
             ?>
-        </div>
+        <div class="winners-evento__saiba-mais">Saiba Mais</div>
       </article>
       <?php endforeach; wp_reset_postdata(); ?>
     </div>

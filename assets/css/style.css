@@ -16,6 +16,12 @@ body {
     color: var(--dark);
 }
 
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 p {
     margin: 1rem 0;
 }
@@ -23,6 +29,7 @@ p {
 main {
     /* padding: 2rem; */
     text-align: justify;
+    flex: 1 0 auto;
 }
 
 .conteudo {

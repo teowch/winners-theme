@@ -7,7 +7,7 @@
   align-items: center;
   overflow: hidden;
   position: relative;
-  /* margin: auto; */
+  margin: auto;
   margin-top: 1rem;
   max-width: 100%;
 }
@@ -41,8 +41,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
+  background: var(--dark);
+  color: var(--orange-winners);
   border: none;
   padding: 10px;
   cursor: pointer;

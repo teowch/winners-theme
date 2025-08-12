@@ -1,48 +1,59 @@
 .winners-eventos__lista {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
     margin-top: 1rem;
 }
 
 .winners-evento {
-    background-color: var(--dark);
-    color: var(--light);
-    border: 5px solid var(--orange-winners);
-    border-radius: 25px;
-    padding: 2rem;
+    background-color: var(--super-light);
+    color: var(--dark);
+    border-left: 5px solid;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    min-width: 300px;
+    max-width: 400px;
+    width: 100%;
+}
+.winners-evento__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .winners-evento__titulo {
-    color: var(--orange-winners);
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-.winners-evento__info {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    color: var(--dark);
 }
 
-.winners-evento__categoria .categoria {
-    display: inline;
+.winners-evento__saiba-mais {
+    width: 100px;
+    margin-left: auto;
+    align-self: flex-end;
+    text-align: center;
+    border: 1px solid var(--dark-orange);
+    /* background-color: var(--dark); */
+    color: var(--dark-orange);
+    padding: 0.5rem;
+    /* border-radius: 5px; */
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.winners-evento__saiba-mais:hover {
+    background-color: var(--orange-winners);
+    color: var(--super-light);
 }
 
 .winners-evento.aguas-abertas {
     border-color: var(--aguas-abertas);
 }
-.winners-evento.aguas-abertas .winners-evento__titulo, .categoria-aguas-abertas {
-    color: var(--aguas-abertas);
-}
 .winners-evento.master {
     border-color: var(--master);
 }
-.winners-evento.master .winners-evento__titulo, .categoria-master {
-    color: var(--master);
-}
 .winners-evento.federados {
-    border-color: var(--federados);
-}
-.winners-evento.federados .winners-evento__titulo, .categoria-federados {
-    color: var(--federados);
+    border-color: var(--orange-winners);
 }
