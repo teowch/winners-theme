@@ -43,6 +43,21 @@
     cursor: pointer;
     transition: all 0.2s;
 }
+
+.winners-evento__info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.winners-evento .categoria {
+    display: inline;
+}
+
+.winners-evento__icon {
+    width: 20px;
+}
+
 .winners-evento__saiba-mais:hover {
     background-color: var(--orange-winners);
     color: var(--super-light);

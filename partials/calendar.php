@@ -125,26 +125,29 @@
     ?>
       <article class="winners-evento <?php echo $cat_slug;?>">
         <h3 class="winners-evento__titulo"><?php echo get_the_title( $evento ); ?></h3>
-            <div class="winners-evento__data">
-                🗓 <?php
+            <div class="winners-evento__data winners-evento__info">
+              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/calendar.png" alt="Calendário" class="winners-evento__icon">
+              <?php
                 $start = esc_html( tribe_get_start_date( $evento, true, $a['data'] ) );
                 $end = esc_html( tribe_get_end_date( $evento, true, $a['data'] ) );
                 echo $start;
                 if ( $start !== $end ) {
-                    echo ' - ' . $end;
+                  echo ' - ' . $end;
                 }
-                ?> 
+              ?> 
             </div>
             <?php
             // opcional: local/venue (se preenchido)
             if ( function_exists('tribe_get_venue') ) {
-                $venue = tribe_get_venue( $evento );
-                if ( $venue ) {
-                    echo '<div class="winners-evento__local">📌 '.esc_html($venue).'</div>';
-                }
+              $venue = tribe_get_venue( $evento );
+              if ( $venue ) {
+                echo '<div class="winners-evento__local winners-evento__info">
+                      <img src="'.get_template_directory_uri().'/assets/images/icons/pin.png" alt="Pin" class="winners-evento__icon">'.esc_html($venue).'</div>';
+              }
             }
-
-            echo '<div class="winners-evento__categoria">🏊‍♂️ Equipe <div class="categoria categoria-'.$cat_slug.'">' . implode(', ', $cat_names) . '</div></div>';
+            echo '<div class="winners-evento__categoria winners-evento__info">
+                  <img src="'.get_template_directory_uri().'/assets/images/icons/swimmer.png" alt="Nadador" class="winners-evento__icon">'.
+                  'Equipe <div class="categoria categoria-'.$cat_slug.'">' . implode(', ', $cat_names) . '</div></div>';
             ?>
         <div class="winners-evento__saiba-mais">Saiba Mais</div>
       </article>
