@@ -81,23 +81,6 @@
     $debug_output .= '</div>';
   }
 
-  if ( ! $eventos ) {
-    $no_events_msg = '<div style="background: #fff3e0; color: #ef6c00; padding: 15px; border: 1px solid #ffb74d; border-radius: 4px; margin: 10px 0;">';
-    $no_events_msg .= '📅 <strong>Nenhum evento encontrado</strong>';
-    if ( ! empty( $a['cat'] ) ) {
-      $no_events_msg .= ' na categoria "' . esc_html($a['cat']) . '"';
-    }
-    $no_events_msg .= '.<br><br>';
-    $no_events_msg .= 'Verifique se:<br>';
-    $no_events_msg .= '• Os eventos estão publicados (não rascunho)<br>';
-    $no_events_msg .= '• Os eventos têm data futura<br>';
-    $no_events_msg .= '• A categoria especificada existe (se informada)<br><br>';
-    $no_events_msg .= 'Use <code>debug="true"</code> no shortcode para mais informações.';
-    $no_events_msg .= '</div>';
-    
-    return $debug_output . $no_events_msg;
-  }
-
   ob_start();
   
   // Output debug info if enabled
@@ -113,7 +96,15 @@
         endif; ?>
 
     <div class="winners-eventos__lista">
-    <?php foreach ( $eventos as $evento ) : setup_postdata( $evento );
+    <?php
+    if ( ! $eventos ) {
+      $no_events_msg = '<div style="background: #fff3e0; color: #ef6c00; padding: 15px; border: 1px solid #ffb74d; border-radius: 4px; margin: 10px 0;">';
+      $no_events_msg .= '📅 <strong>Nenhum evento encontrado</strong>';
+      $no_events_msg .= '</div>';
+      
+      echo $debug_output . $no_events_msg;
+    }
+    foreach ( $eventos as $evento ) : setup_postdata( $evento );
     $categories = get_the_terms($evento, 'tribe_events_cat');
             if ($categories && !is_wp_error($categories)) {
                 $cat_names = array_map(function($cat) {
@@ -149,7 +140,7 @@
                   <img src="'.get_template_directory_uri().'/assets/images/icons/swimmer.png" alt="Nadador" class="winners-evento__icon">'.
                   'Equipe <div class="categoria categoria-'.$cat_slug.'">' . implode(', ', $cat_names) . '</div></div>';
             ?>
-        <div class="winners-evento__saiba-mais">Saiba Mais</div>
+        <a href="/eventos/<?php echo $evento->ID;?>" class="winners-evento__saiba-mais">Saiba Mais</a>
       </article>
       <?php endforeach; wp_reset_postdata(); ?>
     </div>

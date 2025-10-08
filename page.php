@@ -1,5 +1,5 @@
 <?php
-get_template_part('partials/header');
+get_header();
 ?>
 
 <main class="conteudo-principal">
@@ -8,4 +8,4 @@ get_template_part('partials/header');
   <?php endwhile; endif; ?>
 </main>
 
-<?php get_template_part('partials/footer'); ?>
+<?php get_footer(); ?>

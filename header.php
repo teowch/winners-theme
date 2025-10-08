@@ -7,7 +7,7 @@
 </head>
 <body <?php body_class(); ?>>
   <div class="site">
-    <header class="header">
+    <header class="site-header">
       <a href="<?php echo home_url(); ?>" class="logo">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-winners-laranja.png">
       </a>
@@ -19,22 +19,22 @@
           <div class="bar bar-3"></div>
         </div>
         <ul id="menu">
-          <a href="<?php echo home_url('/home'); ?>"><li>Início</li></a>
-          <a href="<?php echo home_url('/quem-somos'); ?>"><li>Quem Somos</li></a>
-          <li href="#" class="has-submenu">
+          <a href="<?php echo home_url(); ?>"><li class="menu-item">Início</li></a>
+          <a href="<?php echo home_url('/quem-somos'); ?>"><li class="menu-item">Quem Somos</li></a>
+          <li class="menu-item has-submenu" href="#">
             <div class="option">
-              <span class="dropdown-icon">
+              <!-- <span class="dropdown-icon">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/down-arrow.png" alt="Abrir submenu">
-              </span>
+              </span> -->
               Equipe
             </div>
             <ul class="submenu" id="submenu">
-              <li><a href="<?php echo home_url('/federados'); ?>">Federados</a></li>
-              <li><a href="<?php echo home_url('/master'); ?>">Master</a></li>
-              <li><a href="<?php echo home_url('/aguas-abertas'); ?>">Águas Abertas</a></li>
+              <li class="submenu-item"><a href="<?php echo home_url('/federados'); ?>">Federados</a></li>
+              <li class="submenu-item"><a href="<?php echo home_url('/master'); ?>">Master</a></li>
+              <li class="submenu-item"><a href="<?php echo home_url('/aguas-abertas'); ?>">Águas Abertas</a></li>
             </ul>
           </li>
-          <a href="<?php echo home_url('/calendario'); ?>"><li>Calendário</li></a>
+          <a href="<?php echo home_url('/competicoes'); ?>"><li class="menu-item">Calendário</li></a>
         </ul>
       </nav>
     </header>

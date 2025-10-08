@@ -1,5 +1,5 @@
 <?php
-get_template_part('partials/header');
+get_header();
 get_template_part('partials/banner-topo');
 ?>
 
@@ -19,4 +19,4 @@ get_template_part('partials/banner-topo');
   ?>
 </main>
 
-<?php get_template_part('partials/footer'); ?>
+<?php get_footer(); ?>

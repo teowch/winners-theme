@@ -1,4 +1,4 @@
-<?php get_template_part('partials/header'); ?>
+<?php get_header(); ?>
 
 <main class="conteudo-principal">
   <h1><?php bloginfo('name'); ?></h1>
@@ -16,4 +16,4 @@
   <?php endif; ?>
 </main>
 
-<?php get_template_part('partials/footer'); ?>
+<?php get_footer(); ?>

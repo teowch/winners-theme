@@ -1,4 +1,4 @@
-header {
+.site-header {
     width: 100%;
     background: var(--dark);
     color: var(--orange-winners);
@@ -19,28 +19,28 @@ header {
     margin: 1rem;
 }
 
-nav {
+.navbar {
     flex: 1;
     max-width: var(--max-content-width);
 }
 
-nav ul {
+.navbar #menu {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     list-style: none;
     height: 100%;
 }
 
-nav ul a, .logo{
+.navbar #menu a, .logo{
     text-decoration: none;
     color: unset;
     transition: all .2s;
 }
-nav ul a:hover {
+.navbar #menu a:hover {
     background-color: #140b07;
 }
 
-nav ul li {
+.navbar #menu .menu-item {
     padding: 1rem;
     height: 100%;
     display: flex;
@@ -76,7 +76,7 @@ nav ul li {
     list-style: none;
 }
 
-.submenu li {
+.submenu .submenu-item {
     width: 100%;
     padding: 0;
     height: auto;
@@ -84,7 +84,7 @@ nav ul li {
     display: block;
 }
 
-.submenu li:last-child {
+.submenu .submenu-item:last-child {
     border-bottom: none;
 }
 
@@ -109,6 +109,7 @@ nav ul li {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: auto;
 }
 
 /* Hamburger Button */
@@ -129,13 +130,13 @@ nav ul li {
 
 /* Estilo para mobile */
 @media (max-width: 768px) {
-    nav {
+    .navbar {
         display: flex;
         align-items: center;
         justify-content: end;
     }
 
-    nav ul {
+    .navbar #menu {
         opacity: 0;
         display: flex;
         flex-direction: column;
@@ -149,10 +150,10 @@ nav ul li {
         height: unset;
     }
 
-    nav ul li, .has-submenu .option{
+    .navbar #menu .menu-item, .has-submenu .option{
         justify-content: start;
         border-top: 1px solid #444;
-        padding: 1rem;
+        /* padding: 1rem; */
         width: 100%;
         position: relative;
     }
@@ -185,7 +186,7 @@ nav ul li {
         max-height: 200px;
     }
 
-    .submenu li {
+    .submenu .submenu-item {
         border-bottom: none;
     }
 
@@ -194,7 +195,7 @@ nav ul li {
     }
 
     /* Quando o menu estiver ativo, mostrar */
-    nav ul.active {
+    .navbar #menu.active {
         opacity: 1;
         pointer-events: auto;
         z-index: 1;

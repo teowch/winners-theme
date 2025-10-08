@@ -6,7 +6,7 @@ const prev = document.getElementById('prev');
 const slides = document.querySelectorAll('.slide'); // Seleciona todos os slides
 const transition = 'transform 0.3s ease';
 
-let position = 0;
+let position = 300;
 let slideWidth = 300;
 
 // Calculate and set slider width based on window size

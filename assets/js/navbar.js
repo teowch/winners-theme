@@ -20,9 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Ensure banner is above navbar and not hidden
-const header = document.querySelector('.header'); // Adjust selector as needed
+const header = document.querySelector('.site-header'); // Adjust selector as needed
 const main = document.querySelector('main');
+const tribeEvents = document.querySelector('.tribe-common');
 if (header) {
     const headerHeight = header.offsetHeight;
-    main.style.marginTop = `${headerHeight}px`;
+    if (main) {
+        main.style.marginTop = `${headerHeight}px`;
+    }
+    if (tribeEvents) {
+        tribeEvents.style.marginTop = `${headerHeight}px`;
+    }
 }

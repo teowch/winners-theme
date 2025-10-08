@@ -1,0 +1,78 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('carouselTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const slides = document.querySelectorAll('.carousel-slide');
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    
+    function updateCarousel() {
+        // Move track
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update active slide
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentSlide);
+        });
+        
+        // Update dots
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }
+    
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+    
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel();
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goToSlide(index));
+    });
+    
+    // Auto-play (optional - uncomment if desired)
+    // setInterval(nextSlide, 5000);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+    });
+    
+    // Touch/swipe support
+    let startX = 0;
+    let endX = 0;
+    
+    track.addEventListener('touchstart', function(e) {
+        startX = e.touches[0].clientX;
+    });
+    
+    track.addEventListener('touchend', function(e) {
+        endX = e.changedTouches[0].clientX;
+        const difference = startX - endX;
+        
+        if (Math.abs(difference) > 50) {
+            if (difference > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+    });
+});

@@ -36,10 +36,9 @@
     align-self: flex-end;
     text-align: center;
     border: 1px solid var(--dark-orange);
-    /* background-color: var(--dark); */
+    text-decoration: none;
     color: var(--dark-orange);
     padding: 0.5rem;
-    /* border-radius: 5px; */
     cursor: pointer;
     transition: all 0.2s;
 }

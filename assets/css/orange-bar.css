@@ -1,5 +1,5 @@
 .orange-bar {
-    width: 50px;
+    width: 100px;
     height: 5px;
-    background-color: var(--orange-winners)
+    background: linear-gradient(to right, var(--orange-winners), var(--light));
 }
