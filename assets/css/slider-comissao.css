@@ -1,7 +1,3 @@
-.slider-comissao-title {
-  
-}
-
 .slider-container {
   display: flex;
   align-items: center;
@@ -14,6 +10,13 @@
 
 .slider {
   overflow: hidden;
+  margin: 0 -5px; /* Compensate for slide margins */
+  width: 100%;
+  max-width: 100%;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
 }
 
 .slide-track {
@@ -26,15 +29,49 @@
   flex-shrink: 0;
   object-fit: cover;
   box-sizing: border-box;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 5px;
 }
 
-.slider::-webkit-scrollbar {
-  display: none;
+.slide:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .slide img {
   width: 100%;
   display: block;
+  transition: filter 0.3s ease;
+}
+
+.slide:hover img {
+  filter: brightness(0.8);
+}
+
+/* Info overlay */
+.slide::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(39, 32, 29, 0.9));
+  color: var(--orange-winners);
+  padding: 20px 15px 15px;
+  font-weight: bold;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+}
+
+.slide:hover::after {
+  transform: translateY(0);
 }
 
 .nav-button {
@@ -46,20 +83,51 @@
   border: none;
   padding: 10px;
   cursor: pointer;
-  z-index: 1;
+  z-index: 3;
+  transition: all 0.3s ease;
+  /* Positions setted on slider.js */
 }
 
-.nav-prev {
-  left: 10px;
-}
-
-.nav-next {
-  right: 10px;
+.nav-button:hover {
+  background: var(--orange-winners);
+  color: var(--dark);
 }
 
 @media (max-width: 600px) {
   .slide {
-    /* A largura será controlada pelo JavaScript */
     min-width: 250px; /* Largura mínima para telas pequenas */
+    margin: 0 3px; /* Smaller margins on mobile */
+  }
+  
+  .slide::after {
+    padding: 15px 10px 10px;
+    font-size: 0.8rem;
+  }
+  
+  .nav-button {
+    padding: 10px 12px;
+    font-size: 14px;
   }
 }
+
+/* Smooth entrance animation */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide {
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* Stagger animation for multiple slides */
+.slide:nth-child(2) { animation-delay: 0.1s; }
+.slide:nth-child(3) { animation-delay: 0.2s; }
+.slide:nth-child(4) { animation-delay: 0.3s; }
+.slide:nth-child(5) { animation-delay: 0.4s; }

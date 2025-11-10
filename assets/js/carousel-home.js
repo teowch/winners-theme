@@ -8,9 +8,22 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentSlide = 0;
     const totalSlides = slides.length;
     
+    // Initialize carousel dimensions dynamically
+    function initializeCarousel() {
+        // Set track width based on number of slides
+        track.style.width = `${totalSlides * 100}%`;
+        
+        // Set each slide width as percentage of track
+        const slideWidth = 100 / totalSlides;
+        slides.forEach(slide => {
+            slide.style.width = `${slideWidth}%`;
+        });
+    }
+    
     function updateCarousel() {
-        // Move track
-        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        // Move track - dynamic calculation based on slide width
+        const slideWidth = 100 / totalSlides; // Each slide is this % of track width
+        track.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
         
         // Update active slide
         slides.forEach((slide, index) => {
@@ -22,6 +35,34 @@ document.addEventListener('DOMContentLoaded', function() {
             dot.classList.toggle('active', index === currentSlide);
         });
     }
+    
+    // Initialize the carousel
+    initializeCarousel();
+    
+    // Slide click handlers for navigation
+    slides.forEach((slide, index) => {
+        slide.addEventListener('click', function(e) {
+            // Only navigate if not currently animating and slide is active
+            if (slide.classList.contains('active') && 
+                !slide.classList.contains('slide-in-right') && 
+                !slide.classList.contains('slide-in-left') && 
+                !slide.classList.contains('slide-out-left') && 
+                !slide.classList.contains('slide-out-right')) {
+                
+                const link = slide.dataset.link;
+                if (link) {
+                    if (link.includes('youtube.com')) {
+                        window.open(link, '_blank');
+                    } else {
+                        window.location.href = link;
+                    }
+                }
+            }
+        });
+        
+        // Add cursor pointer to indicate clickable
+        slide.style.cursor = 'pointer';
+    });
     
     function nextSlide() {
         currentSlide = (currentSlide + 1) % totalSlides;

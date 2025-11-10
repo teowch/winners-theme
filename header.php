@@ -11,6 +11,9 @@
       <a href="<?php echo home_url(); ?>" class="logo">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-winners-laranja.png">
       </a>
+      <a href="<?php echo home_url(); ?>" class="logo">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-dkm-branca.png">
+      </a>
       <nav class="navbar">
         <!-- Hamburger Button -->
         <div class="menu-icon" id="menu-icon">
@@ -37,4 +40,5 @@
           <a href="<?php echo home_url('/competicoes'); ?>"><li class="menu-item">Calendário</li></a>
         </ul>
       </nav>
+
     </header>

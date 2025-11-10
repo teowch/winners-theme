@@ -23,12 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
 const header = document.querySelector('.site-header'); // Adjust selector as needed
 const main = document.querySelector('main');
 const tribeEvents = document.querySelector('.tribe-common');
+const body = document.body;
 if (header) {
     const headerHeight = header.offsetHeight;
-    if (main) {
-        main.style.marginTop = `${headerHeight}px`;
-    }
-    if (tribeEvents) {
-        tribeEvents.style.marginTop = `${headerHeight}px`;
-    }
+    body.style.marginTop = `${headerHeight}px`;
+    // if (main) {
+    //     main.style.marginTop = `${headerHeight}px`;
+    // }
+    // if (tribeEvents) {
+    //     tribeEvents.style.marginTop = `${headerHeight}px`;
+    // }
 }

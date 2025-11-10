@@ -3,6 +3,11 @@
     max-width: 1200px;
     margin: 0 auto 1rem;
     position: relative;
+    overflow: hidden; /* Prevent container from overflowing */
+    
+    /* CSS Variables for easy aspect ratio testing */
+    --desktop-aspect-ratio: 2.39 / 1; /* 21:9 */
+    --mobile-aspect-ratio: 4 / 4;     /* 3:4 - Change this to test different ratios */
 }
 
 .carousel-wrapper {
@@ -14,20 +19,35 @@
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    aspect-ratio: 2.39 / 1;
+    /* Width will be set dynamically by JavaScript */
 }
 
 .carousel-slide {
-    min-width: 100%;
+    flex-shrink: 0; /* Prevent slides from shrinking */
     position: relative;
+    /* Width will be set dynamically by JavaScript */
 }
 
 .carousel-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block;
-    aspect-ratio: 2.39 / 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    aspect-ratio: var(--desktop-aspect-ratio);
+}
+
+/* Desktop images (21:9 aspect ratio) */
+.carousel-image--slide-1 {
+    background-image: url('../images/carousel/next-event.jpeg');
+}
+
+.carousel-image--slide-2 {
+    background-image: url('../images/carousel/sobre.jpeg');
+}
+
+.carousel-image--slide-3 {
+    background-image: url('../images/carousel/winners-tv.jpeg');
 }
 
 .carousel-btn {
@@ -40,17 +60,22 @@
     padding: 10px;
     cursor: pointer;
     z-index: 1;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
+    font-size: 18px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+    background: var(--orange-winners);
+    color: var(--dark);
 }
 
 .carousel-btn--prev {
-    left: 20px;
+    left: 10px;
 }
 
 .carousel-btn--next {
-    right: 20px;
+    right: 10px;
 }
 
 .carousel-dots {
@@ -83,10 +108,27 @@
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 530px) {    
+    .carousel-image {
+        aspect-ratio: var(--mobile-aspect-ratio);
+    }
+    
+    /* Mobile images - You can use different images or placeholders for testing */
+    .carousel-image--slide-1 {
+        background-image: url('https://placehold.co/900x1200.jpeg'); /* Testing placeholder */
+    }
+    
+    .carousel-image--slide-2 {
+        background-image: url('https://placehold.co/900x1200/333333/FFFFFF.jpeg'); /* Different placeholder */
+    }
+    
+    .carousel-image--slide-3 {
+        background-image: url('https://placehold.co/900x1200/FF6B35/FFFFFF.jpeg'); /* Orange placeholder */
+    }
+    
     .carousel-btn {
-        width: 40px;
-        height: 40px;
+        padding: 8px;
+        font-size: 16px;
     }
     
     .carousel-btn--prev {

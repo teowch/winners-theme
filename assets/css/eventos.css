@@ -3,6 +3,34 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1rem;
     margin-top: 1rem;
+    overflow-y: auto;
+    max-height: 50vh;
+    justify-content: start;
+    width: 100%;
+    max-width: 100%;
+    padding-right: 8px;
+    box-sizing: border-box;
+}
+
+/* Custom scrollbar styling */
+.winners-eventos__lista::-webkit-scrollbar {
+    width: 8px;
+    
+}
+
+.winners-eventos__lista::-webkit-scrollbar-track {
+    background: var(--super-light);
+    border-radius: 4px;
+}
+
+.winners-eventos__lista::-webkit-scrollbar-thumb {
+    background: var(--orange-winners);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.winners-eventos__lista::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-orange);
 }
 
 .winners-evento {
@@ -17,6 +45,7 @@
     min-width: 300px;
     max-width: 400px;
     width: 100%;
+    margin: auto;
 }
 .winners-evento__header {
     display: flex;
