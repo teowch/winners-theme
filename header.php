@@ -11,7 +11,7 @@
       <a href="<?php echo home_url(); ?>" class="logo">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-winners-laranja.png">
       </a>
-      <a href="<?php echo home_url(); ?>" class="logo">
+      <a href="https://www.dkmbank.com.br/" target="_blank" class="logo">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-dkm-branca.png">
       </a>
       <nav class="navbar">

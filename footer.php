@@ -7,9 +7,9 @@
               <img src="<?=get_template_directory_uri()?>/assets/images/icons/instagram-icon.png" alt="Instagram">
               <span>@equipewinnersbr</span>
             </a>
-            <a href="https://wa.me/554192832023" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/554192852023" target="_blank" rel="noopener noreferrer">
               <img src="<?=get_template_directory_uri()?>/assets/images/icons/whatsapp-icon.png" alt="Whatsapp">
-              <span>+55 41 9283-2023</span>
+              <span>+55 41 9285-2023</span>
             </a>
             <a href="https://www.youtube.com/@winnerstvbr" target="_blank" rel="noopener noreferrer">
               <img src="<?=get_template_directory_uri()?>/assets/images/icons/youtube-icon.png" alt="YouTube">

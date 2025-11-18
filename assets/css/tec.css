@@ -87,7 +87,8 @@
 }
 
 .tribe-events-c-view-selector__list-item {
-    width: 50px;
+    width: auto;
+    min-width: 50px;
     text-align: center;
 }
 
@@ -100,6 +101,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.tribe-events-c-view-selector__list-item-link {
+    width: auto;
+}
+
+.tribe-events-c-view-selector__list-item-icon-svg .tribe-common-c-svgicon__svg-fill {
+    fill: currentColor;
 }
 
 .tribe-events-c-view-selector__list-item-link, .tribe-events-c-view-selector__list-item-icon {

@@ -63,6 +63,7 @@
     font-size: 18px;
     border-radius: 4px;
     transition: all 0.3s ease;
+    box-shadow: 0px 0px 10px #000000;
 }
 
 .carousel-btn:hover {
@@ -115,15 +116,15 @@
     
     /* Mobile images - You can use different images or placeholders for testing */
     .carousel-image--slide-1 {
-        background-image: url('https://placehold.co/900x1200.jpeg'); /* Testing placeholder */
+        background-image: url('../images/carousel/next-event-mobile.jpeg'); /* Testing placeholder */
     }
     
     .carousel-image--slide-2 {
-        background-image: url('https://placehold.co/900x1200/333333/FFFFFF.jpeg'); /* Different placeholder */
+        background-image: url('../images/carousel/sobre-mobile.jpeg'); /* Different placeholder */
     }
     
     .carousel-image--slide-3 {
-        background-image: url('https://placehold.co/900x1200/FF6B35/FFFFFF.jpeg'); /* Orange placeholder */
+        background-image: url('../images/carousel/winners-tv-mobile.jpeg'); /* Orange placeholder */
     }
     
     .carousel-btn {
