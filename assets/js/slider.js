@@ -66,13 +66,6 @@ const calculateSliderWidth = () => {
     slider.style.width = `${calculatedWidth}px`;
   }
   
-  // Debug logging
-  console.log('Content width:', contentWidth);
-  console.log('Slides per view:', slidesPerView);
-  console.log('Slide width:', slideWidth);
-  console.log('Slide margins:', slideMargins);
-  console.log('Calculated container width:', calculatedWidth);
-  
   // Set track width to accommodate all slides with margins
   track.style.width = `${totalSlides * effectiveSlideWidth}px`;
   
