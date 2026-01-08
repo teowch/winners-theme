@@ -78,8 +78,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--dark);
-  color: var(--orange-winners);
+  background: var(--dark) !important;
+  color: var(--orange-winners) !important;
   border: none;
   padding: 10px;
   cursor: pointer;
@@ -89,8 +89,8 @@
 }
 
 .nav-button:hover {
-  background: var(--orange-winners);
-  color: var(--dark);
+  background: var(--orange-winners) !important;
+  color: var(--dark) !important;
 }
 
 @media (max-width: 600px) {

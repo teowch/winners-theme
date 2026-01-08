@@ -46,6 +46,7 @@ main {
 .conteudo {
     padding: 1rem 10rem;
     width: 100%;
+    background-color: var(--light);
 }
 
 .page-title {
