@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    overflow-x: hidden;
+    overflow: hidden;
     height: 75vh;
     position: relative;
 }
