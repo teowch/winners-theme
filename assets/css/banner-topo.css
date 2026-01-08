@@ -40,6 +40,9 @@
 }
 
 @media (max-width: 768px) {
+    .banner-topo {
+        height: 50vh;
+    }
     .mask {
         clip-path: polygon(
             calc(2rem) 0,

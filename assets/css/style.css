@@ -43,6 +43,10 @@ main {
     flex: 1 0 auto;
 }
 
+main h1, main h2, main h3 {
+	text-align: left;
+}
+
 .conteudo {
     padding: 1rem 10rem;
     width: 100%;
